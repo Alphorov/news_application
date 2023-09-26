@@ -21,15 +21,14 @@ class ArticleRepositoryImpl implements ArticleRepository {
         categoryQuery,
       );
 
-      final response = res.response;
-
-      if (response.statusCode == HttpStatus.ok && response.data.isNotEmpty) {
-        return DataSuccess(response.data);
+      if (res.response.statusCode == HttpStatus.ok &&
+          res.data.articles.isNotEmpty) {
+        return DataSuccess(res.data.articles);
       } else {
         return DataError(DioException(
-          requestOptions: response.requestOptions,
-          error: response.statusMessage,
-          response: response,
+          requestOptions: res.response.requestOptions,
+          error: res.response.statusMessage,
+          response: res.response,
         ));
       }
     } on DioException catch (e) {
