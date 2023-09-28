@@ -14,7 +14,7 @@ class RemoteAricleBloc extends Bloc<RemoteAricleEvent, RemoteAricleState> {
     on<RemoteAricleFetch>(_onFetchArticles);
   }
 
-  final GetArticleUseCase _getArticleUseCase;
+  final GetArticlesUseCase _getArticleUseCase;
 
   Future<void> _onFetchArticles(
       RemoteAricleEvent event, Emitter<RemoteAricleState> emit) async {

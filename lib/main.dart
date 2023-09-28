@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_application/src/config/theme/app_themes.dart';
 import 'package:news_application/src/feature/daily_news/presentation/bloc/article/remote/remote_aricle_bloc.dart';
-import 'package:news_application/src/feature/daily_news/presentation/pages/home/daily_news.dart';
+import 'package:news_application/src/feature/daily_news/presentation/pages/daily_news_home.dart';
 import 'package:news_application/src/injection_container.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await initializeDependencies();
   runApp(const MainApp());
 }

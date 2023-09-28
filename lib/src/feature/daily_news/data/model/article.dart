@@ -1,6 +1,8 @@
+import 'package:floor/floor.dart';
 import 'package:news_application/src/core/constants/constants.dart';
 import 'package:news_application/src/feature/daily_news/domain/entities/article.dart';
 
+@Entity(tableName: 'articles', primaryKeys: ['id'])
 class ArticleModel extends ArticleEntity {
   const ArticleModel({
     int? id,
@@ -33,6 +35,19 @@ class ArticleModel extends ArticleEntity {
           : kDefaultImage,
       publishedAt: map['publishedAt'],
       content: map['content'],
+    );
+  }
+
+  factory ArticleModel.fromEntity(ArticleEntity article) {
+    return ArticleModel(
+      id: article.id,
+      author: article.author,
+      title: article.title,
+      description: article.description,
+      url: article.url,
+      urlToImage: article.urlToImage,
+      publishedAt: article.publishedAt,
+      content: article.content,
     );
   }
 }
