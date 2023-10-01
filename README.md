@@ -1,4 +1,4 @@
-# news_app_clean_architecture
+# news_appication
 
 A new Flutter project.
 
